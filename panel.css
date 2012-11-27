@@ -1,0 +1,39 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#examplecontainer {
+	padding: 10px;
+}
+
+#resizablepanel .bd {
+	overflow: auto;
+	background-color: #fff;
+	padding: 10px;
+}
+
+#resizablepanel .ft {
+	height: 15px;
+	padding: 0;
+}
+
+#resizablepanel .yui-resize-handle-br {
+	right: 0;
+	bottom: 0;
+	height: 8px;
+	width: 8px;
+	position: absolute;
+}
+
+#resizablepanel_c.hide-scrollbars .yui-resize .bd {
+	overflow: hidden;
+}
+
+#resizablepanel_c.show-scrollbars .yui-resize .bd {
+	overflow: auto;
+}
+
+#resizablepanel_c.show-scrollbars .underlay {
+	overflow: visible;
+}

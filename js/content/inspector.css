@@ -1,0 +1,19 @@
+.inspectorOverParents {
+	border: #1ff100 solid 1px;
+}
+
+.inspectorOver {
+    border: #1ff100 solid 2px;
+}
+
+.inspectorSelected {
+	border: green solid 1px;	
+}
+
+.inspectorAnchor {
+	border: blue solid 1px;	
+}
+
+.inspectorSame {
+	border: red solid 2px;
+}
