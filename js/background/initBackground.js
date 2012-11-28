@@ -1,6 +1,7 @@
 // Array to hold callback functions
 var callbacks = [];
 var currentTab = null;
+var hsTabs = {};
 
 function saveData(data) {
     datas.addData(currentTab.url, data);
@@ -14,7 +15,7 @@ function getOptions(callback) {
     // Injects the content script into the current page
     //chrome.tabs.executeScript(null, { file: "content_script.js" });
 
-    callback(currentTab.url, options);
+    callback(hsTabs[currentTab.id], currentTab.url, options);
 };
 
 function saveActivated(activated) {
@@ -35,6 +36,18 @@ function updateTab(tab) {
 }
 
 /* ---------------------------------- */
+
+chrome.webRequest.onBeforeRequest.addListener(function(details) {
+    var currentMethod = details.method;
+    var body = details.requestBody;
+    var currentParams = null;
+    if(body != undefined) {
+        if(body.formData != undefined) {
+            currentParams = body.formData;
+        }
+    }
+    hsTabs[details.tabId] = new HSPage(currentMethod, details.url, currentParams);
+},{types:["main_frame"],urls:["http://*/*"]},["blocking", "requestBody"]);
 
 // Perform the callback when a request is received from the content script
 chrome.extension.onRequest.addListener(function(request) {

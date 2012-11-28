@@ -4,7 +4,7 @@
     <script type="text/javascript" src="admin.js"></script>
 </head>
 <form id="hs_form_admin">
-<table width="200" cellspacing="0" cellpadding="0" border="0">
+<table width="500" cellspacing="0" cellpadding="0" border="0">
 <tbody><tr>
 <td>Activer le s&eacute;lecteur<br></td>
 <td><input type="checkbox" id="hsActivated"></td></tr>
@@ -16,4 +16,18 @@
 <td>&nbsp;</td></tr>
 </tbody></table>
 </form>
+<h2>Informations sur la page</h2>
+<ul>
+    <li><input id="selectMethod" type="checkbox"/> <b>Méthode :</b> <span id="method"></span></li>
+    <li><input id="selectProtocol" type="checkbox"/> <b>Protocole :</b> <span id="protocol"></span></li>
+    <li><input id="selectHost" type="checkbox"/> <b>Host :</b> <span id="host"></span></li>
+    <li><input id="selectPath" type="checkbox"/> <b>Path :</b> <span id="path"></span></li>
+    <li><input id="selectHash" type="checkbox"/> <b>Hash :</b> <span id="hash"></span></li>
+    <li id="getParams"><b>GET Params</b>
+        <ul></ul>
+    </li>
+    <li id="postParams"><b>POST Params</b>
+        <ul></ul>
+    </li>
+</ul>
 </html>

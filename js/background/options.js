@@ -1,5 +1,11 @@
 function HSOption(page) {
     this.page = page;
+    var location = getLocation(page);
+    this.hostname = location.hostname;
+    this.pathname = location.pathname;
+    this.hash = location.hash;
+    this.search = location.search;
+
     this.activated = false;
 }
 
