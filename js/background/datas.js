@@ -14,8 +14,8 @@ HSDatas.prototype.getPageDatas = function(page) {
     }
     return options;
 };
-HSDatas.prototype.addData = function(page, data) {
-    this.pages[page].push(data);
+HSDatas.prototype.saveData = function(page, data) {
+    this.pages[page] = data;
     this.storeDatas();
 }
 

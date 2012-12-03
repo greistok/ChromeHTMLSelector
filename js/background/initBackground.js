@@ -4,7 +4,7 @@ var currentTab = null;
 var hsTabs = {};
 
 function saveData(data) {
-    datas.addData(currentTab.url, data);
+    datas.saveData(currentTab.url, data);
 }
 
 // This function is called onload in the popup code
@@ -30,6 +30,7 @@ function updateTab(tab) {
         currentTab = tab;
     }
     chrome.tabs.executeScript(tab.id, {
+
         code : "htmlSelector.toggle("+options.getPageOption(tab.url).activated+
             ",\""+JSON.stringify(datas.getPageDatas(tab.url)).replace(/"/g,'\\"')+"\")"
     });
